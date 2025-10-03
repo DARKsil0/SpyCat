@@ -1,28 +1,24 @@
 
-# 🐾 Spy Cat – Django REST API
+# Spy Cat – Django REST API
 
 ---
 
 ## Run locally
 
-### 1. Create virtual environment
-```bash
-python -m venv venv
-source venv/bin/activate   
-```
 
-### 2. Install dependencies
+
+### 1. Install dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Run migrations
+### 2. Run migrations
 ```bash
 python manage.py migrate
 ```
 
 
-### 4. Start development server
+### 3. Start development server
 ```bash
 python manage.py runserver
 ```
