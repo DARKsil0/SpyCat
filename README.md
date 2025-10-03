@@ -14,12 +14,14 @@ pip install -r requirements.txt
 
 ### 2. Run migrations
 ```bash
+cd web_app
 python manage.py migrate
 ```
 
 
 ### 3. Start development server
 ```bash
+cd web_app
 python manage.py runserver
 ```
 
