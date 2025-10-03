@@ -1,0 +1,334 @@
+{
+	"info": {
+		"_postman_id": "7f9c9ef8-b8ff-463f-83d8-7cb62e91945a",
+		"name": "Spy Cat API",
+		"description": "Postman collection for Spy Cat CRUD API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36918513",
+		"_collection_link": "https://dark-meteor-760602.postman.co/workspace/cat_spy~0c47014a-91a7-4716-b53f-1b8df58b0e2c/collection/36918513-7f9c9ef8-b8ff-463f-83d8-7cb62e91945a?action=share&source=collection_link&creator=36918513"
+	},
+	"item": [
+		{
+			"name": "Cats",
+			"item": [
+				{
+					"name": "Create Cat",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Super Cat\",\n  \"years_experience\": 7,\n  \"breed_id\": \"sphy\",\n  \"salary\": \"5500.00\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/cats/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cats",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Cats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/cats/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cats",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Cat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/cats/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cats",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Cat Salary",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"salary\": \"6000.00\" }"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/cats/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cats",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Cat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/cats/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"cats",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Missions",
+			"item": [
+				{
+					"name": "Create Mission (with Targets)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"cat\": null,\n  \"targets\": [\n    { \"name\": \"Find the contact person\", \"country\": \"GB\", \"notes\": \"Windsor palace 10am\", \"is_complete\": false },\n    { \"name\": \"Receive package\", \"country\": \"GB\", \"notes\": \"Grand Palace Hotel 3pm\", \"is_complete\": false }\n  ]\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/missions/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"missions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Missions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/missions/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"missions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Mission",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/missions/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"missions",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Mission",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/missions/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"missions",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Assign Cat to Mission",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"cat_id\": 1 }"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/missions/1/assign-cat/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"missions",
+								"1",
+								"assign-cat",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Targets",
+			"item": [
+				{
+					"name": "List Targets",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/targets/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"targets",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Target",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/api/targets/2/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"targets",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Target (notes / complete)",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"notes\": \"Package received\", \"is_complete\": true }"
+						},
+						"url": {
+							"raw": "{{base_url}}/api/targets/1/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"api",
+								"targets",
+								"1",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000"
+		}
+	]
+}
